@@ -1,5 +1,14 @@
 import * as React from "react"
 
+export enum TestEnum {
+	ValA,
+	ValB = "ValB",
+	ValC = 1
+}
+
+export type NewTypeA = "mydefaultstring"
+export type NewTypeB = "seconds"
+
 export interface Props {
 	/**
 	 * Children
@@ -18,15 +27,13 @@ export interface Props {
 	hello?: string
 
 	/**
+	 *
 	 * the id of the
 	 *
-	 * @type {string}
+	 * @type {(string | number)}
 	 * @memberof Props
-	 * 
-	 * @example
-	 * <MyComponent id="" />
 	 */
-	id: string
+	id: string | number | boolean
 
 	/**
 	 * a required number array, but set default by defaultProps
@@ -35,6 +42,21 @@ export interface Props {
 	 * @memberof Props
 	 */
 	aNumberArray?: Array<number>
+
+	/**
+	 *
+	 *
+	 * @type {TestEnum}
+	 * @memberof Props
+	 */
+	aEnumValue?: TestEnum
+
+	aUnionType?: NewTypeA & NewTypeB
+
+	aOrType?: NewTypeA | NewTypeB
+	aObjectType?: { [key: string]: number }
+	aBooleanType?: boolean
+	aBigBooleanType?: Boolean
 }
 
 export interface State {
