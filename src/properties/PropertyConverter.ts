@@ -5,6 +5,8 @@ export default class PropertyConverter {
 	public static docToCatalogProperty(docProp: DocgenPropertyType): CatalogPropertyModel {
 		const model = new CatalogPropertyModel()
 
+		// xx magic xx
+
 		return model
 	}
 }

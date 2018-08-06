@@ -57,22 +57,31 @@ export interface Props {
 	aObjectType?: { [key: string]: number }
 	aBooleanType?: boolean
 	aBigBooleanType?: Boolean
+	aBooleanTypeWithDefault?: boolean
+	aNumberType?: number
+	aNumberTypeWithDefault?: number
+	aNumberOrStringType?: number | string
 }
 
 export interface State {
 }
 
 /**
- * Diese Komponente dient
+ * Diese Komponente dient... Und soviel mehr
  *
  * @export
  * @class MyComponent
  * @extends {React.Component<Props, State>}
+ * 
+ * @example
+ * <MyComponent id="component-id" />
  */
 export default class MyComponent extends React.Component<Props, State> {
 	static defaultProps: Partial<Props> = {
 		aNumberArray: [1, 2, 3],
-		hello: "true"
+		hello: "true",
+		aBooleanTypeWithDefault: true,
+		aNumberTypeWithDefault: 0
 	}
 
 	constructor(props: Props) {
@@ -80,9 +89,6 @@ export default class MyComponent extends React.Component<Props, State> {
 
 		this.state = {
 		}
-
-		// Wow keine Type Checkings mehr... Lächerlich
-		console.log(this.props.hello.bold())
 	}
 
 	render() {

@@ -1,17 +1,21 @@
+export type DocgenPropertyTypeDefaultValue = {
+	/**
+	 * The default value
+	 *
+	 * @type {string}
+	 */
+	value: string
+}
+
+export type DocgenPropertyTypeInfo = { name: string }
+
 type DocgenPropertyType = {
 	/**
 	 * An object with the default value, when static defaultProps are given
 	 *
 	 * @type {{ value: string }}
 	 */
-	defaultValue: {
-		/**
-		 * The default value
-		 *
-		 * @type {string}
-		 */
-		value: string
-	}
+	defaultValue: DocgenPropertyTypeDefaultValue | null
 	/**
 	 * The name of the variable
 	 *
@@ -27,14 +31,22 @@ type DocgenPropertyType = {
 	required: boolean
 
 	/**
-	 * Typestring in js syntax of the variable
+	 * The doc description of the property
 	 *
-	 * @type {{ name: string }}
+	 * @type {string}
 	 */
-	type: { name: string }
+	description: string
+
+	/**
+	 * the type of the property
+	 *
+	 * @type {(DocgenPropertyTypeInfo | null)}
+	 */
+	type: DocgenPropertyTypeInfo | null
 
 	// dont know yet
-	raw: string
+	// raw: string
 }
+
 
 export default DocgenPropertyType
