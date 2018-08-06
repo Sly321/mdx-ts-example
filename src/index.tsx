@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom"
+import Wrapper from "./Wrapper"
 
-
-ReactDOM.render(<div>Hello Wurld!</div>, document.querySelector("#root"))
+ReactDOM.render(<Wrapper />, document.querySelector("#root"))

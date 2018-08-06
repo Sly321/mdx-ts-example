@@ -18,6 +18,8 @@ module.exports = {
 				options: {
 					configFile: paths.tsconfig
 				}
+			}, {
+				loader: require.resolve("react-docgen-typescript-loader")
 			}],
 			exclude: /node_modules/
 		}]
